@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.burger {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 10px;
+  right: 10px;
+  background-color: yellow;
+  z-index: 1;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav {
+  height: 100vh;
+  width: 30vh;
+  background-color: blue;
+  /*on décalle de la taille*/
+  transform: translateX(30vw);
+  /*la transition s'effectue sur 700ms*/
+  transition: transform 700ms;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav div {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+  transform: translateX(200px);
+}
+
+/* Classe qu'on ajoutera pour quand le menu sera ouvert */
+nav.visible {
+  transform: translateX(0);
+}
+
+nav.visible div {
+  transform: translateX(0);
+}
+
+.burger .center {
+  position: relative;
+}
