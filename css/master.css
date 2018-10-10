@@ -1,53 +1,85 @@
 body {
-  margin: 0;
-  overflow-x: hidden;
-}
-
-.burger {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  top: 10px;
-  right: 10px;
-  background-color: yellow;
-  z-index: 1;
+	margin: 0;
+	overflow-x: hidden;
 }
 
 header {
-  display: flex;
-  justify-content: flex-end;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.burger {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	top: 10px;
+	right: 10px;
+	background-color: #77B1A9;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.burger div {
+	width: 30px;
+	height: 5px;
+	background-color: black;
+	transition: all .5s;
+	position: relative;
+	border-radius: 3px;
+}
+
+.burger.anime .top {
+	transform: translate3d(-6px, 3px, 0) rotate(-45deg) scaleX(1);
+	transition: 500ms;
+}
+
+.burger.anime .bottom {
+	transform: translate3d(-6px, -3px, 0) rotate(45deg) scaleX(1);
+	transition: 500ms;
 }
 
 nav {
-  height: 100vh;
-  width: 30vh;
-  background-color: blue;
-  /*on décalle de la taille*/
-  transform: translateX(30vw);
-  /*la transition s'effectue sur 700ms*/
-  transition: transform 700ms;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
-nav div {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: white;
-  transform: translateX(200px);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	height: 100vh;
+	width: 30vw;
+	background-color: #6C6368;
+	font-size: 1.7em;
+	font-family: 'Montserrat', sans-serif;
+	color: white;
+	/*on décalle de la taille*/
+	transform: translateX(30vw);
+	/*la transition s'effectue sur 700ms*/
+	transition: transform 700ms;
 }
 
 /* Classe qu'on ajoutera pour quand le menu sera ouvert */
+nav .home {
+	transform: translateX(30vw);
+	transition: transform 2000ms;
+}
+
+nav .about {
+	transform: translateX(30vw);
+	transition: transform 2700ms;
+}
+
+nav .projects {
+	transform: translateX(30vw);
+	transition: transform 3400ms;
+}
+
 nav.visible {
-  transform: translateX(0);
+	transform: translateX(0);
 }
 
 nav.visible div {
-  transform: translateX(0);
-}
-
-.burger .center {
-  position: relative;
+	transform: translateX(0);
 }
